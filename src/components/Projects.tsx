@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { GitHub, ExternalLink, MessageCircle } from 'lucide-react';
+import { Github, ExternalLink, MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Projects = () => {
@@ -96,7 +96,7 @@ const Projects = () => {
                 
                 <div className="flex items-center text-gray-500 text-sm">
                   <a href="#" className="mr-4 hover:text-neon-blue transition-colors">
-                    <GitHub size={18} />
+                    <Github size={18} />
                   </a>
                   <a href="#" className="mr-4 hover:text-neon-blue transition-colors">
                     <ExternalLink size={18} />

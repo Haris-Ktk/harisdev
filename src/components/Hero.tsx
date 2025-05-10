@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { GitHub, Twitter, Linkedin, ExternalLink } from 'lucide-react';
+import { Github, Twitter, Linkedin, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
@@ -36,7 +36,7 @@ const Hero = () => {
                 transition={{ delay: 0.3, duration: 0.5 }}
               >
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <GitHub size={20} />
+                  <Github size={20} />
                 </a>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">
                   <Twitter size={20} />
