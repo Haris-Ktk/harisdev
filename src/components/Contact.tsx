@@ -75,11 +75,11 @@ const Contact = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          Let's talk about your <span className="text-neon-green">great project</span>
+          Let's talk about your <span className="gradient-text">great project</span>
           <span className="absolute bottom-0 left-0 w-1/2 h-1 bg-neon-blue"></span>
         </motion.h2>
         <motion.p 
-          className="text-gray-400 max-w-lg mb-12"
+          className="text-gray-300 max-w-lg mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -98,40 +98,40 @@ const Contact = () => {
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-1">Name</label>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">Name</label>
                 <input
                   type="text"
                   id="name"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-neon-blue"
+                  className="w-full p-3 glassmorphism rounded-md text-white focus:outline-none focus:ring-2 focus:ring-neon-blue"
                   required
                 />
               </div>
               
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-1">Email</label>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">Email</label>
                 <input
                   type="email"
                   id="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-neon-blue"
+                  className="w-full p-3 glassmorphism rounded-md text-white focus:outline-none focus:ring-2 focus:ring-neon-blue"
                   required
                 />
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-1">Message</label>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">Message</label>
                 <textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   rows={5}
-                  className="w-full p-3 bg-gray-900/50 border border-gray-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-neon-blue"
+                  className="w-full p-3 glassmorphism rounded-md text-white focus:outline-none focus:ring-2 focus:ring-neon-blue"
                   required
                 ></textarea>
               </div>
@@ -144,7 +144,7 @@ const Contact = () => {
               
               <motion.button
                 type="submit"
-                className="bg-neon-blue hover:bg-blue-600 text-white px-6 py-3 rounded-md font-medium transition-all"
+                className="bg-gradient-to-r from-neon-blue to-neon-purple text-white px-6 py-3 rounded-md font-medium transition-all"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -163,25 +163,25 @@ const Contact = () => {
               {contactMethods.map((method, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-center p-4 bg-gray-900/50 backdrop-blur-sm rounded-lg border border-gray-800/50"
+                  className="flex items-center p-4 glassmorphism gradient-card rounded-lg"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: 0.3 + (index * 0.1) }}
                   whileHover={{ y: -5, transition: { duration: 0.2 } }}
                 >
-                  <div className={`w-10 h-10 rounded-full flex items-center justify-center mr-4 bg-neon-${method.color}/20 text-neon-${method.color}`}>
+                  <div className={`w-10 h-10 rounded-full flex items-center justify-center mr-4 gradient-${method.color} text-white`}>
                     {method.icon}
                   </div>
                   <div>
-                    <h4 className="text-sm font-medium text-gray-400">{method.method}</h4>
+                    <h4 className="text-sm font-medium text-gray-300">{method.method}</h4>
                     <p className="text-white">{method.value}</p>
                   </div>
                 </motion.div>
               ))}
               
-              <div className="mt-8 pt-8 border-t border-gray-800">
-                <h4 className="text-xl font-semibold mb-4">Let's connect</h4>
+              <div className="mt-8 pt-8 border-t border-white/10">
+                <h4 className="text-xl font-semibold mb-4 gradient-text">Let's connect</h4>
                 <div className="flex space-x-4">
                   <a href="#" className="text-gray-400 hover:text-white transition-colors">
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -196,11 +196,6 @@ const Contact = () => {
                   <a href="#" className="text-gray-400 hover:text-white transition-colors">
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
-                    </svg>
-                  </a>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path fillRule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z" clipRule="evenodd"></path>
                     </svg>
                   </a>
                 </div>

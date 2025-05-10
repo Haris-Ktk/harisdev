@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,10 +27,10 @@ const Navbar = () => {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-black/80 backdrop-blur-md py-3' : 'py-5'}`}>
+    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'glassmorphism py-3' : 'py-5'}`}>
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <a href="#" className="text-white font-bold text-xl">
-          <span className="text-neon-blue">E</span>mmanuel
+          <span className="gradient-text">E</span>mmanuel
         </a>
 
         {/* Desktop Navigation */}
@@ -44,12 +45,14 @@ const Navbar = () => {
             </a>
           ))}
           
-          <a 
+          <motion.a 
             href="#contact" 
-            className="bg-neon-blue hover:bg-blue-600 text-white px-4 py-2 rounded-md text-sm transition-all"
+            className="bg-gradient-to-r from-neon-blue to-neon-purple text-white px-4 py-2 rounded-md text-sm transition-all"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             Hire Me
-          </a>
+          </motion.a>
         </nav>
 
         {/* Mobile Navigation Toggle */}
@@ -63,7 +66,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-black/95 backdrop-blur-md absolute top-full left-0 w-full py-4 animate-fade-in">
+        <div className="md:hidden glassmorphism absolute top-full left-0 w-full py-4 animate-fade-in">
           <nav className="container mx-auto px-4 flex flex-col space-y-4">
             {navLinks.map((link) => (
               <a 
@@ -78,7 +81,7 @@ const Navbar = () => {
             
             <a 
               href="#contact" 
-              className="bg-neon-blue hover:bg-blue-600 text-white px-4 py-2 rounded-md inline-block w-max transition-all"
+              className="bg-gradient-to-r from-neon-blue to-neon-purple text-white px-4 py-2 rounded-md inline-block w-max transition-all"
               onClick={() => setMenuOpen(false)}
             >
               Hire Me

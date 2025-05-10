@@ -56,7 +56,7 @@ const Projects = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          Projects
+          <span className="gradient-text">Projects</span>
           <span className="absolute bottom-0 left-0 w-1/2 h-1 bg-neon-blue"></span>
         </motion.h2>
         
@@ -64,12 +64,12 @@ const Projects = () => {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="bg-gray-900/50 backdrop-blur-sm rounded-lg overflow-hidden border border-gray-800/50"
+              className="glassmorphism gradient-card rounded-lg overflow-hidden"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -5, transition: { duration: 0.2 } }}
+              whileHover={{ y: -5, boxShadow: '0 10px 30px rgba(0,0,0,0.2)', transition: { duration: 0.2 } }}
             >
               <div className="h-48 overflow-hidden">
                 <img 
@@ -81,20 +81,20 @@ const Projects = () => {
               
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-gray-400 text-sm mb-4">{project.description}</p>
+                <p className="text-gray-300 text-sm mb-4">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map((tag, tagIndex) => (
                     <span 
                       key={tagIndex}
-                      className="text-xs bg-gray-800 text-gray-300 px-2 py-1 rounded-full"
+                      className="text-xs glassmorphism px-2 py-1 rounded-full text-gray-200"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
                 
-                <div className="flex items-center text-gray-500 text-sm">
+                <div className="flex items-center text-gray-300 text-sm">
                   <a href="#" className="mr-4 hover:text-neon-blue transition-colors">
                     <Github size={18} />
                   </a>

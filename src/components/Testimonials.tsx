@@ -32,7 +32,7 @@ const Testimonials = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          Testimonials
+          <span className="gradient-text">Testimonials</span>
           <span className="absolute bottom-0 left-0 w-1/2 h-1 bg-neon-blue"></span>
         </motion.h2>
         
@@ -40,13 +40,13 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
-              className="bg-gray-900/50 backdrop-blur-sm rounded-lg p-6 border border-gray-800/50 relative"
+              className="glassmorphism gradient-card rounded-lg p-6 relative"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
-              <div className="absolute -top-3 -left-3 w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center border border-gray-800">
+              <div className="absolute -top-3 -left-3 w-12 h-12 glassmorphism rounded-full flex items-center justify-center border border-white/10">
                 <MessageSquare size={20} className="text-neon-blue" />
               </div>
               

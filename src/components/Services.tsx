@@ -37,7 +37,7 @@ const Services = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          Services
+          <span className="gradient-text">Services</span>
           <span className="absolute bottom-0 left-0 w-1/2 h-1 bg-neon-blue"></span>
         </motion.h2>
         
@@ -45,18 +45,18 @@ const Services = () => {
           {serviceItems.map((service, index) => (
             <motion.div
               key={index}
-              className={`neon-glow-${service.color} rounded-lg p-6 h-full border border-gray-800/50`}
+              className={`glassmorphism gradient-card rounded-lg p-6 h-full`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -5, transition: { duration: 0.2 } }}
+              whileHover={{ y: -5, boxShadow: '0 10px 30px rgba(0,0,0,0.2)', transition: { duration: 0.2 } }}
             >
-              <div className={`w-14 h-14 rounded-full flex items-center justify-center mb-6 bg-neon-${service.color}/20 text-neon-${service.color}`}>
+              <div className={`w-14 h-14 rounded-full flex items-center justify-center mb-6 gradient-${service.color} text-white`}>
                 {service.icon}
               </div>
               <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
-              <p className="text-gray-400">{service.description}</p>
+              <p className="text-gray-300">{service.description}</p>
               <div className="mt-6 flex items-center gap-2">
                 <div className={`w-2 h-2 rounded-full bg-neon-${service.color}`}></div>
                 <div className={`w-2 h-2 rounded-full bg-neon-${service.color}/60`}></div>
